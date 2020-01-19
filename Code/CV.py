@@ -20,8 +20,6 @@ nothing()
 cv2.namedWindow('frame')
 cap = cv2.VideoCapture(0)
 
-fourcc = cv2.VideoWriter_fourcc(*'MP4V')
-out = cv2.VideoWriter('outputlatest.mp4', fourcc, 10.0, (640,480))
 cv2.createTrackbar('hl','frame',0,255,nothing)
 cv2.createTrackbar('sl','frame',0,255,nothing)
 cv2.createTrackbar('vl','frame',0,255,nothing)
@@ -108,11 +106,10 @@ while(1):
             print("close latch")
             urllib.request.urlopen(url0)
 
-            
+
         cv2.circle(roi, (cX, cY), 3, [255, 0, 0], -1)
         history.pop(0)
         cv2.imshow('mask', mask)
-        out.write(frame)
         cv2.imshow('op', frame)
         k = cv2.waitKey(5) & 0xFF
         sleep(0.05)
@@ -129,4 +126,3 @@ while(1):
 print('closing')
 cv2.destroyAllWindows()
 cap.release()
-out.release()
