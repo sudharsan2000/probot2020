@@ -1,15 +1,14 @@
-
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
-#include<Servo.h>
+#include <Servo.h>
  
-// Replace with your network credentials
+//the network credentials ssid(service set identifier-name of the network) and password must be given to connect to a network.
 const char* ssid = "Redmi";
 const char* password = "abcd1234";
-int relay = LED_BUILTIN;
+
 ESP8266WebServer server(80);   //instantiate server at port 80 (http port)
-Servo servo;
+Servo servo;  //creating an object of class servo
 String page = "<html> \n <body>";
 void setup(void){
   servo.attach(D2);
@@ -32,19 +31,20 @@ void setup(void){
   server.on("/turnon",turnon);
   server.begin();
   Serial.println("Web server started!");
-  digitalWrite(relay,HIGH);
+  
 }
+//Function to rotate the servo motor to a specific position so that closing of door latch takes place
  void turnoff()
  {
-   Serial.println(0);
-   servo.write(0);
-   server.send(200,"text/html","<html> <h1> Door locked</h1> </html>");
+   Serial.println(0);//printing 0 on serial monitor
+   servo.write(0);//this rotates the servo to zero degree position
+   server.send(200,"text/html","<html> <h1> off</h1> </html>");//printing off on the webpage created
  }
   void turnon()
  {
    Serial.println(1);
    servo.write(90);
-   server.send(200,"text/html","<html> <h1> Door unnlocked</h1> </html>");
+   server.send(200,"text/html","<html> <h1> on</h1> </html>");
  }
 void loop(void)
 {
