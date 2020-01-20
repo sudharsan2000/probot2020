@@ -38,13 +38,13 @@ void setup(void){
  {
    Serial.println(0);
    servo.write(0);
-   server.send(200,"text/html","<html> <h1> off</h1> </html>");
+   server.send(200,"text/html","<html> <h1> Door locked</h1> </html>");
  }
   void turnon()
  {
    Serial.println(1);
    servo.write(90);
-   server.send(200,"text/html","<html> <h1> on</h1> </html>");
+   server.send(200,"text/html","<html> <h1> Door unnlocked</h1> </html>");
  }
 void loop(void)
 {
