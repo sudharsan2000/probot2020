@@ -1,0 +1,29 @@
+Windows:
+	Arduino IDE:
+		1. Download supported version from : https://www.arduino.cc/en/Main/Software
+		2. Install in default directory.
+		
+	Node MCU board support:
+		1. Follow install instructions on : https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
+
+	Python:
+		1. Download installer from https://www.python.org/ftp/python/3.7.6/python-3.7.6-amd64.exe
+		2. Install python in default directory and add it to path.
+		3. After installation is complete open IDLE to check if python is properly installed.
+
+	Opencv:
+		1. Open command prompt.
+		2. Type pip install opencv-python
+		3. After installation is done type "python" in command prompt to start a python shell.
+		4. In the shell enter "import cv2" to check installation.
+
+Linux:
+	OpenCV:
+		1. Open terminal and type "pip3 install opencv-python". (Note: run command with sudo if permission denied error is thrown).
+	Arduino IDE:
+		1. Download supported version from : https://www.arduino.cc/en/Main/Software
+		2. Install in default directory.
+	Node MCU board support:
+		1. Follow install instructions on : https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
+
+
